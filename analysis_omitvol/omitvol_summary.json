@@ -1,0 +1,13 @@
+{
+  "coverage": {
+    "omit": 1.8890590677192738,
+    "r2omit": 2.0932746040314134,
+    "rand": 0.770876821811195,
+    "staff": 0.7372371181122952,
+    "ratio_r2omit_median": 0.904675388114238,
+    "ratio_r2omit_min": 0.8281801515693485,
+    "ratio_r2omit_max": 1.267290536614062
+  },
+  "beta_r2omit_vs_rand_per_pp": 0.21592164051346363,
+  "max_abs_identity_error": 0.0
+}

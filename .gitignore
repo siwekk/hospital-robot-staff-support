@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+# raw run outputs, logs and status files written by the runners
+results/
+repro/
+*.log
+*.status
+*.lock
+*.tmp
+*.tar.gz
+data/raw/
+figures/out/

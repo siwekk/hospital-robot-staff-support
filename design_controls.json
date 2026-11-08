@@ -1,0 +1,181 @@
+{
+  "phase": "controls",
+  "seeds": [
+    103000,
+    103001,
+    103002,
+    103003,
+    103004,
+    103005,
+    103006,
+    103007,
+    103008,
+    103009,
+    103010,
+    103011,
+    103012,
+    103013,
+    103014,
+    103015,
+    103016,
+    103017,
+    103018,
+    103019
+  ],
+  "warmup_days": 7,
+  "measurement_days": 7,
+  "policies": [
+    "matched_random",
+    "idle_pair_rule"
+  ],
+  "cases": [
+    {
+      "name": "mobile_b0_lag0",
+      "mode": "mobile",
+      "background_fraction": 0.0,
+      "information_lag": 0,
+      "admit_probability": 0.0014661288815033414
+    },
+    {
+      "name": "mobile_b0_lag10",
+      "mode": "mobile",
+      "background_fraction": 0.0,
+      "information_lag": 10,
+      "admit_probability": 0.0008407564008730666
+    },
+    {
+      "name": "mobile_b40_lag0",
+      "mode": "mobile",
+      "background_fraction": 0.4,
+      "information_lag": 0,
+      "admit_probability": 0.002921777545602985
+    },
+    {
+      "name": "mobile_b40_lag10",
+      "mode": "mobile",
+      "background_fraction": 0.4,
+      "information_lag": 10,
+      "admit_probability": 0.0011788406670247417
+    },
+    {
+      "name": "mobile_b80_lag0",
+      "mode": "mobile",
+      "background_fraction": 0.8,
+      "information_lag": 0,
+      "admit_probability": 0.009689673532684257
+    },
+    {
+      "name": "mobile_b80_lag10",
+      "mode": "mobile",
+      "background_fraction": 0.8,
+      "information_lag": 10,
+      "admit_probability": 0.001571346311122533
+    },
+    {
+      "name": "local_b0_lag0",
+      "mode": "local",
+      "background_fraction": 0.0,
+      "information_lag": 0,
+      "admit_probability": 0.01381305532230459
+    },
+    {
+      "name": "local_b0_lag10",
+      "mode": "local",
+      "background_fraction": 0.0,
+      "information_lag": 10,
+      "admit_probability": 0.006476006016605071
+    },
+    {
+      "name": "local_b40_lag0",
+      "mode": "local",
+      "background_fraction": 0.4,
+      "information_lag": 0,
+      "admit_probability": 0.01955663821230777
+    },
+    {
+      "name": "local_b40_lag10",
+      "mode": "local",
+      "background_fraction": 0.4,
+      "information_lag": 10,
+      "admit_probability": 0.005849770856340511
+    },
+    {
+      "name": "local_b80_lag0",
+      "mode": "local",
+      "background_fraction": 0.8,
+      "information_lag": 0,
+      "admit_probability": 0.08721448994532026
+    },
+    {
+      "name": "local_b80_lag10",
+      "mode": "local",
+      "background_fraction": 0.8,
+      "information_lag": 10,
+      "admit_probability": 0.00854955054442128
+    },
+    {
+      "name": "mixed_b0_lag0",
+      "mode": "mixed",
+      "background_fraction": 0.0,
+      "information_lag": 0,
+      "admit_probability": 0.001650046447480439
+    },
+    {
+      "name": "mixed_b0_lag10",
+      "mode": "mixed",
+      "background_fraction": 0.0,
+      "information_lag": 10,
+      "admit_probability": 0.0007310042027449473
+    },
+    {
+      "name": "mixed_b40_lag0",
+      "mode": "mixed",
+      "background_fraction": 0.4,
+      "information_lag": 0,
+      "admit_probability": 0.004250169059450237
+    },
+    {
+      "name": "mixed_b40_lag10",
+      "mode": "mixed",
+      "background_fraction": 0.4,
+      "information_lag": 10,
+      "admit_probability": 0.0009213881984765479
+    },
+    {
+      "name": "mixed_b80_lag0",
+      "mode": "mixed",
+      "background_fraction": 0.8,
+      "information_lag": 0,
+      "admit_probability": 0.012453787119142112
+    },
+    {
+      "name": "mixed_b80_lag10",
+      "mode": "mixed",
+      "background_fraction": 0.8,
+      "information_lag": 10,
+      "admit_probability": 0.0015711825908460847
+    }
+  ],
+  "code_hashes": {
+    "src/test_solver_retries.py": "11162347db37e4f5f68cf11dfed44f2aff14709dff59c2bd81168fb5aa025a35",
+    "src/test_workflows.py": "0874255622eee4eb02b93eb2622698fc36f9c0b295d56001c714b5b2fdd52da3",
+    "src/workflow_simulation.py": "152f17a41bf1db967b22932c9dfa28e256ceddc0c906eb4223afa4c6f0fb40ca",
+    "src/run_study.py": "39e1fb4364d045fb3b109520ce8a546d29a3992704353c36712907ca9937f784",
+    "src/run_workflows.py": "e760d3e05592d3f571000706d313f2aa7008cb2ea19db90421697ad32858cf92",
+    "src/staff_simulation.py": "9e4967d6c2fe73b03487a63fa56af0a94475f72752eab10a690be72c09beff2b",
+    "src/schedule_optimizer.py": "3ad54f00d4740dbf8781404cfe60d5f7fa562aeb0a9b83a3c51909a0b6543258",
+    "src/forecast.py": "baa0de513ce2a0d425f6ed5bed56dcfeb4588066afc80e1b7a8e05690956df37",
+    "src/hospital_sim/cli.py": "8fdf1a67ff7f53feb22f4a22cf5543d2d0dabc2d16ee8b3927813df26dba27e1",
+    "src/hospital_sim/simulation.py": "92adb32da07d633317458c6ff63479518e9ee1290dfa634e38797c7e7edeb18c",
+    "src/hospital_sim/routing.py": "dd052f566e26573c7708f130245f0c6b82c4d50d9c72ce62416ab920aed03606",
+    "src/hospital_sim/config.py": "5b279fe6d7b3604abfc9678bb6e694820cdf3b9987edd03368834e3030c87822",
+    "src/hospital_sim/__init__.py": "257e25740f7110efd7b2cff0fcfc7ca7868d1d0af87bae98bf136069d44a5fc5",
+    "src/hospital_sim/experiment.py": "4848cf42696ddb1efec5ad577131001d3c1f8d1762f8054babfb91fb8f873309",
+    "src/hospital_sim/entities.py": "b8bf9efc74e592612735282de26d26ffb52f50d01e1d78f7dff40a0999f80f3f",
+    "src/hospital_sim/demand.py": "f570d0ef113dd1827da96ab87b2b14e0423f064428dd5b8c401ed20138f9d5dc",
+    "ctl/control_simulation.py": "39ecd70a4046a43763fea4f3bbfbd04e9ccc95ddcd0d92f4f1b1a25af072e16e",
+    "ctl/analyze_controls.py": "614793945e327be5f53dc8e60124d3db6c2694a5c53faa068057957fe8140864",
+    "ctl/run_controls.py": "3dd0a26ae6c679d28a972a152721db60613d1413893a94a7e3e3eb534a2a625a"
+  },
+  "note": "Arms added to the frozen main design; paired with results/main on identical seeds."
+}

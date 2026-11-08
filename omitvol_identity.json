@@ -1,0 +1,11 @@
+{
+  "n": 1080,
+  "max_abs_difference": 1.3322676295501878e-15,
+  "identical_within_csv_precision": true,
+  "max_reconstruction_error": 0.0,
+  "by_policy": {
+    "matched_random": 360,
+    "no_support_forecast": 360,
+    "staff_rollout": 360
+  }
+}

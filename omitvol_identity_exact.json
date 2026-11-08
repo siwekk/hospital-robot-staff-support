@@ -1,0 +1,15 @@
+{
+  "runs_compared": 1080,
+  "keys_compared": [
+    "weighted_tardiness_per_request",
+    "robot_coverage",
+    "created",
+    "robot_completed",
+    "late_fraction",
+    "net_released_minutes",
+    "prediction_mae"
+  ],
+  "mismatches": 0,
+  "examples": [],
+  "identical": true
+}

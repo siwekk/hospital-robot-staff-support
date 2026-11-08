@@ -1,0 +1,175 @@
+{
+  "phase": "scarcity",
+  "scenarios": {
+    "roster85": [
+      [
+        "hospital",
+        "human_staffing",
+        [
+          {
+            "name": "night",
+            "start_hour": 22,
+            "end_hour": 6,
+            "count": 7
+          },
+          {
+            "name": "day",
+            "start_hour": 6,
+            "end_hour": 14,
+            "count": 26
+          },
+          {
+            "name": "evening",
+            "start_hour": 14,
+            "end_hour": 22,
+            "count": 20
+          }
+        ]
+      ]
+    ],
+    "roster70": [
+      [
+        "hospital",
+        "human_staffing",
+        [
+          {
+            "name": "night",
+            "start_hour": 22,
+            "end_hour": 6,
+            "count": 6
+          },
+          {
+            "name": "day",
+            "start_hour": 6,
+            "end_hour": 14,
+            "count": 21
+          },
+          {
+            "name": "evening",
+            "start_hour": 14,
+            "end_hour": 22,
+            "count": 17
+          }
+        ]
+      ]
+    ],
+    "unattended": [
+      [
+        "robots",
+        "unattended_receiving",
+        true
+      ]
+    ]
+  },
+  "seeds": [
+    103000,
+    103001,
+    103002,
+    103003,
+    103004,
+    103005,
+    103006,
+    103007,
+    103008,
+    103009,
+    103010,
+    103011
+  ],
+  "warmup_days": 7,
+  "measurement_days": 7,
+  "policies": [
+    "human_only",
+    "staff_rollout",
+    "no_support_forecast"
+  ],
+  "cases": [
+    {
+      "name": "mobile_b40_lag0",
+      "mode": "mobile",
+      "background_fraction": 0.4,
+      "information_lag": 0
+    },
+    {
+      "name": "mobile_b40_lag10",
+      "mode": "mobile",
+      "background_fraction": 0.4,
+      "information_lag": 10
+    },
+    {
+      "name": "mobile_b80_lag0",
+      "mode": "mobile",
+      "background_fraction": 0.8,
+      "information_lag": 0
+    },
+    {
+      "name": "mobile_b80_lag10",
+      "mode": "mobile",
+      "background_fraction": 0.8,
+      "information_lag": 10
+    },
+    {
+      "name": "local_b40_lag0",
+      "mode": "local",
+      "background_fraction": 0.4,
+      "information_lag": 0
+    },
+    {
+      "name": "local_b40_lag10",
+      "mode": "local",
+      "background_fraction": 0.4,
+      "information_lag": 10
+    },
+    {
+      "name": "local_b80_lag0",
+      "mode": "local",
+      "background_fraction": 0.8,
+      "information_lag": 0
+    },
+    {
+      "name": "local_b80_lag10",
+      "mode": "local",
+      "background_fraction": 0.8,
+      "information_lag": 10
+    }
+  ],
+  "fleet_size": 2,
+  "analysis_plan": "For each scenario, seed averages over the eight equally weighted conditions, 95% t intervals, 12 seeds. Reported: J of every policy; staff_rollout - human_only; B = J(no_support_forecast) - J(staff_rollout); V = J(no_support_forecast) - J(matched_random); S = J(matched_random) - J(staff_rollout); robot coverage, released staff minutes per day and mobile transport utilization. The baseline uses the main runs and results/controls on the same seeds and conditions. Contrasts by arrangement and by b are exploratory, and all contrasts are descriptive (designed after the main results).",
+  "code_hashes": {
+    "src/forecast.py": "baa0de513ce2a0d425f6ed5bed56dcfeb4588066afc80e1b7a8e05690956df37",
+    "src/hospital_sim/__init__.py": "257e25740f7110efd7b2cff0fcfc7ca7868d1d0af87bae98bf136069d44a5fc5",
+    "src/hospital_sim/cli.py": "8fdf1a67ff7f53feb22f4a22cf5543d2d0dabc2d16ee8b3927813df26dba27e1",
+    "src/hospital_sim/config.py": "5b279fe6d7b3604abfc9678bb6e694820cdf3b9987edd03368834e3030c87822",
+    "src/hospital_sim/demand.py": "f570d0ef113dd1827da96ab87b2b14e0423f064428dd5b8c401ed20138f9d5dc",
+    "src/hospital_sim/entities.py": "b8bf9efc74e592612735282de26d26ffb52f50d01e1d78f7dff40a0999f80f3f",
+    "src/hospital_sim/experiment.py": "4848cf42696ddb1efec5ad577131001d3c1f8d1762f8054babfb91fb8f873309",
+    "src/hospital_sim/routing.py": "dd052f566e26573c7708f130245f0c6b82c4d50d9c72ce62416ab920aed03606",
+    "src/hospital_sim/simulation.py": "92adb32da07d633317458c6ff63479518e9ee1290dfa634e38797c7e7edeb18c",
+    "src/run_study.py": "39e1fb4364d045fb3b109520ce8a546d29a3992704353c36712907ca9937f784",
+    "src/run_workflows.py": "e760d3e05592d3f571000706d313f2aa7008cb2ea19db90421697ad32858cf92",
+    "src/schedule_optimizer.py": "3ad54f00d4740dbf8781404cfe60d5f7fa562aeb0a9b83a3c51909a0b6543258",
+    "src/staff_simulation.py": "9e4967d6c2fe73b03487a63fa56af0a94475f72752eab10a690be72c09beff2b",
+    "src/test_solver_retries.py": "11162347db37e4f5f68cf11dfed44f2aff14709dff59c2bd81168fb5aa025a35",
+    "src/test_workflows.py": "0874255622eee4eb02b93eb2622698fc36f9c0b295d56001c714b5b2fdd52da3",
+    "src/workflow_simulation.py": "152f17a41bf1db967b22932c9dfa28e256ceddc0c906eb4223afa4c6f0fb40ca",
+    "ctl/analyze_budget.py": "e0e67c9d58ba5a7aaa5c293ae248a66c05ac29f8329cd4e1b95ef6ab5deb47d4",
+    "ctl/analyze_controls.py": "f341aaf2702e161a5e086f82adf33a9f823d18ce47532d2d54a08a0f09171bb3",
+    "ctl/analyze_extra.py": "64fde8c96210e74e23335a6b28cfb9f6c8e4069298edb32009d3b80c24fb3160",
+    "ctl/analyze_opt.py": "f640a1a67067a008842fcaa4d6277ce0bf89cf34747492b05f089428d98a6e8a",
+    "ctl/analyze_optvol.py": "2fb58969083bde9d07a6e81e10d650b2c073e24e96a47a7a12432119fa246301",
+    "ctl/analyze_scarcity.py": "a1ddb697f34852ef248ffa81a1b9e74ab2cf490a78259cc764e808a554930365",
+    "ctl/budget_simulation.py": "d93c811f7deece2e5e396bd28ed9a9a6552489c7817ff08a4ff6d5d189175f77",
+    "ctl/complete_opt_server.py": "d057b91e6a65f0f2dc02074968b51bae00cf73c53075816598538a9cff6394a3",
+    "ctl/control_simulation.py": "4dbbcbc4e835ed10cca972dd8f3be1f932109bf7307b7a5261581675a31695a8",
+    "ctl/extra_simulation.py": "550a052ff585ff2092640cafe9981b66c78522b0b2333adf8b2e25964c6a9615",
+    "ctl/make_budget_design.py": "5105c2d3347d1b6c153906c2c3f379940fe788210b77ecd9e13d424592e777f9",
+    "ctl/make_grid.py": "c712007b3016e7dd6c7ed30fa76c2edf9fe0c62a020064ef6367a0f13c9aabb7",
+    "ctl/make_paper_figures.py": "d0df18d3428bb6dfd6cb1e1ea172f7c8db8cf5cba3d93a10e56e2dcfa3d5ca57",
+    "ctl/make_phi_grid.py": "e45a9956fb7479341f05f9020a57fdc5e7ad9c78d2ae96075ad94ac88e2976f7",
+    "ctl/run_budget.py": "10ff7cfd9163de4866fb896041d8def8a6f6daddb9575479ce5119ca8395cba0",
+    "ctl/run_controls.py": "48be38bd38e8435d852ccdcbc9da5cb0850bf5537af61c4070b2191f593bacf2",
+    "ctl/run_extra.py": "5b428160a1e64199ded27ca5cec4b370677236d47c8bf87b418bdf3ece3eb8b2",
+    "ctl/run_optvol.py": "6526b4adf078130fc26cf05e1e7f5cca37adf3bd6d63200db3d71a5ac7d0ea15",
+    "ctl/run_scarcity.py": "5f5a7e78359041b3393ff54ad3467f5c20ff8da047ce95bb648384c067c495bd",
+    "ctl/scarcity_simulation.py": "78acf5f79f935053eec08385f0c9ad0d8211c8d329be4b803cd12073bd852b4f"
+  }
+}

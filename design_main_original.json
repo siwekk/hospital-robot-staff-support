@@ -1,0 +1,172 @@
+{
+  "phase": "main",
+  "repetitions": 20,
+  "warmup": 7,
+  "days": 7,
+  "seeds": [
+    103000,
+    103001,
+    103002,
+    103003,
+    103004,
+    103005,
+    103006,
+    103007,
+    103008,
+    103009,
+    103010,
+    103011,
+    103012,
+    103013,
+    103014,
+    103015,
+    103016,
+    103017,
+    103018,
+    103019
+  ],
+  "cases": [
+    {
+      "name": "mobile_b0_lag0",
+      "mode": "mobile",
+      "background_fraction": 0.0,
+      "information_lag": 0
+    },
+    {
+      "name": "mobile_b0_lag10",
+      "mode": "mobile",
+      "background_fraction": 0.0,
+      "information_lag": 10
+    },
+    {
+      "name": "mobile_b40_lag0",
+      "mode": "mobile",
+      "background_fraction": 0.4,
+      "information_lag": 0
+    },
+    {
+      "name": "mobile_b40_lag10",
+      "mode": "mobile",
+      "background_fraction": 0.4,
+      "information_lag": 10
+    },
+    {
+      "name": "mobile_b80_lag0",
+      "mode": "mobile",
+      "background_fraction": 0.8,
+      "information_lag": 0
+    },
+    {
+      "name": "mobile_b80_lag10",
+      "mode": "mobile",
+      "background_fraction": 0.8,
+      "information_lag": 10
+    },
+    {
+      "name": "local_b0_lag0",
+      "mode": "local",
+      "background_fraction": 0.0,
+      "information_lag": 0
+    },
+    {
+      "name": "local_b0_lag10",
+      "mode": "local",
+      "background_fraction": 0.0,
+      "information_lag": 10
+    },
+    {
+      "name": "local_b40_lag0",
+      "mode": "local",
+      "background_fraction": 0.4,
+      "information_lag": 0
+    },
+    {
+      "name": "local_b40_lag10",
+      "mode": "local",
+      "background_fraction": 0.4,
+      "information_lag": 10
+    },
+    {
+      "name": "local_b80_lag0",
+      "mode": "local",
+      "background_fraction": 0.8,
+      "information_lag": 0
+    },
+    {
+      "name": "local_b80_lag10",
+      "mode": "local",
+      "background_fraction": 0.8,
+      "information_lag": 10
+    },
+    {
+      "name": "mixed_b0_lag0",
+      "mode": "mixed",
+      "background_fraction": 0.0,
+      "information_lag": 0
+    },
+    {
+      "name": "mixed_b0_lag10",
+      "mode": "mixed",
+      "background_fraction": 0.0,
+      "information_lag": 10
+    },
+    {
+      "name": "mixed_b40_lag0",
+      "mode": "mixed",
+      "background_fraction": 0.4,
+      "information_lag": 0
+    },
+    {
+      "name": "mixed_b40_lag10",
+      "mode": "mixed",
+      "background_fraction": 0.4,
+      "information_lag": 10
+    },
+    {
+      "name": "mixed_b80_lag0",
+      "mode": "mixed",
+      "background_fraction": 0.8,
+      "information_lag": 0
+    },
+    {
+      "name": "mixed_b80_lag10",
+      "mode": "mixed",
+      "background_fraction": 0.8,
+      "information_lag": 10
+    }
+  ],
+  "policies": [
+    "human_only",
+    "own_completion",
+    "no_support_forecast",
+    "staff_rollout",
+    "optimizer"
+  ],
+  "code_hashes": {
+    "code/test_workflows.py": "0874255622eee4eb02b93eb2622698fc36f9c0b295d56001c714b5b2fdd52da3",
+    "code/run_workflows.py": "e760d3e05592d3f571000706d313f2aa7008cb2ea19db90421697ad32858cf92",
+    "code/test_solver_retries.py": "11162347db37e4f5f68cf11dfed44f2aff14709dff59c2bd81168fb5aa025a35",
+    "code/schedule_optimizer.py": "3ad54f00d4740dbf8781404cfe60d5f7fa562aeb0a9b83a3c51909a0b6543258",
+    "code/workflow_simulation.py": "152f17a41bf1db967b22932c9dfa28e256ceddc0c906eb4223afa4c6f0fb40ca",
+    "code/staff_simulation.py": "9e4967d6c2fe73b03487a63fa56af0a94475f72752eab10a690be72c09beff2b",
+    "code/forecast.py": "baa0de513ce2a0d425f6ed5bed56dcfeb4588066afc80e1b7a8e05690956df37",
+    "code/run_study.py": "39e1fb4364d045fb3b109520ce8a546d29a3992704353c36712907ca9937f784",
+    "code/hospital_sim/cli.py": "8fdf1a67ff7f53feb22f4a22cf5543d2d0dabc2d16ee8b3927813df26dba27e1",
+    "code/hospital_sim/routing.py": "dd052f566e26573c7708f130245f0c6b82c4d50d9c72ce62416ab920aed03606",
+    "code/hospital_sim/entities.py": "b8bf9efc74e592612735282de26d26ffb52f50d01e1d78f7dff40a0999f80f3f",
+    "code/hospital_sim/__init__.py": "257e25740f7110efd7b2cff0fcfc7ca7868d1d0af87bae98bf136069d44a5fc5",
+    "code/hospital_sim/demand.py": "f570d0ef113dd1827da96ab87b2b14e0423f064428dd5b8c401ed20138f9d5dc",
+    "code/hospital_sim/config.py": "5b279fe6d7b3604abfc9678bb6e694820cdf3b9987edd03368834e3030c87822",
+    "code/hospital_sim/experiment.py": "4848cf42696ddb1efec5ad577131001d3c1f8d1762f8054babfb91fb8f873309",
+    "code/hospital_sim/simulation.py": "92adb32da07d633317458c6ff63479518e9ee1290dfa634e38797c7e7edeb18c"
+  },
+  "optimizer": {
+    "primary_limits_seconds": [
+      1.0,
+      5.0,
+      20.0
+    ],
+    "secondary_limit_seconds": 1.0,
+    "retry_only_status": "UNKNOWN"
+  }
+}

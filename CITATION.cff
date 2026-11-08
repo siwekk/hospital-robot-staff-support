@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying article and the Freiburg dataset."
+title: "Forecasting Human Support Improves the Choice, Not Only the Number, of Hospital Robot Missions: simulation code"
+type: software
+authors:
+  - family-names: Siwek
+    given-names: Krzysztof
+    affiliation: "Warsaw University of Technology"
+    email: krzysztof.siwek@pw.edu.pl
+  - family-names: Świetlicka
+    given-names: Aleksandra Hanna
+    affiliation: "Poznań University of Technology"
+    email: aleksandra.swietlicka@put.poznan.pl
+version: 1.0.0
+date-released: 2026-11-08
+license: MIT
+keywords:
+  - hospital logistics
+  - mobile robots
+  - multi-robot task allocation
+  - human-robot collaboration
+  - discrete event simulation
+references:
+  - type: dataset
+    title: "Healthcare Logistics Dataset: GraphML Pathway Network and Transport Requests (University Medical Center Freiburg)"
+    authors:
+      - family-names: Hess
+        given-names: A.
+      - family-names: Stampa
+        given-names: D.
+    year: 2026
+    publisher:
+      name: Zenodo
+    doi: 10.5281/zenodo.19085901

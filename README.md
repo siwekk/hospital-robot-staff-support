@@ -1,6 +1,6 @@
 # Forecasting Human Support Improves the Choice, Not Only the Number, of Hospital Robot Missions
 
-**Krzysztof Siwek**<sup>1</sup> and **Aleksandra Hanna Świetlicka**<sup>2</sup>
+**Krzysztof Siwek**<sup>1</sup> and **Aleksandra Świetlicka**<sup>2</sup>
 
 <sup>1</sup> Faculty of Electrical Engineering, Warsaw University of Technology, Warsaw, Poland
 <sup>2</sup> Faculty of Control, Robotics and Electrical Engineering, Poznań University of Technology, Poznań, Poland

@@ -38,6 +38,7 @@ All results are conditional on one hospital pathway network and assumed task cla
 ├── figures/             Scripts for the figures of the article
 ├── validation/          Execution tests (5 of the 14 tests)
 ├── ref/                 Stored runs for the reproducibility check
+├── appendix/            Online appendix of the article (Tables A1–A5, STRESS-DES checklist)
 ├── analysis_*/          Summary results of each phase (CSV, JSON)
 ├── design_*.json        Frozen designs (seeds, conditions, probabilities, code hashes)
 ├── *calibration*.json, *targets*.json, *verify*.json   Calibration logs of the random arms
@@ -82,16 +83,18 @@ Each phase writes one JSON file per run to `results/<phase>/`, skips runs that a
 |---|---|---|
 | Main experiment (5 policies, 18 conditions, 20 seeds) | Table 4 | `python src/run_workflows.py --phase main --workers 12` |
 | Controls (matched random, idle rules) | Tables 4–5 | `python ctl/run_controls.py --phase main --workers 12` |
-| Staff time front, sensitivity | Fig. 6, Table A2 | `bash ctl/pipeline.sh` |
+| Staff time front, sensitivity | Fig. 6, Tables A1–A2 | `bash ctl/pipeline.sh` |
 | Optimizer at matched volume | Table 6 | `python ctl/run_optvol.py --phase P --workers 12` for P = targets, calibrate, verify, freeze, main |
 | Random arm at omitted-support coverage, mission logs | Table 5, Fig. 5 | `bash ctl/pipeline_omitvol.sh 12` |
-| Front volume and threshold rule at equal coverage | Table 5, Figs. 3, 5, 6 | `bash ctl/pipeline_frontvol.sh 12` |
+| Front volume and threshold rule at equal coverage | Table 5, Table A5, Figs. 3, 5, 6 | `bash ctl/pipeline_frontvol.sh 12` |
 | Scarcity, unattended receiving | Fig. 8, Table A3 | `bash ctl/pipeline_scarcity.sh 12` |
 | Equal budget | Fig. 8, Table A3 | `bash ctl/pipeline_budget.sh` |
 | Demand, night only, tours, combined | Fig. 8, Table A3 | `bash ctl/pipeline_levers.sh 12` |
 | Warm-up check | Section 3.4 | `python ctl/check_warmup.py 8` |
 | Class mix (20% specimens, 5 policies, 10 seeds) | Section 6.7, Table A4 | `python ctl/run_specmix.py --phase all --workers 12` |
 | Availability gate (18 conditions, 20 seeds) | Section 6.8, Table 7 | `python ctl/run_gate.py --phase test` then `--phase main --workers 12` |
+
+Tables A1–A5 and the STRESS-DES checklist are in the [online appendix](appendix/README.md).
 
 The class mix and availability gate phases were added after all other phases. Their raw run outputs are in archives 11 and 12 of the Zenodo record; their designs (`design_specmix.json`, `design_gate.json`), the calibration log (`specmix_calibration.json`), and summary analyses are also in this repository.
 

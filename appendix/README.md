@@ -131,5 +131,5 @@ Maps the STRESS-DES reporting items (Monks et al., 2019, *Journal of Simulation*
 | 5.1 | Software | Python 3.12, SimPy 4.1.2, OR-Tools 9.15 (`requirements_server.lock`) |
 | 5.2 | Random sampling | Separate seeded streams for demand, unavailability and service variation shared across policies; forecasts draw no random numbers; random arms use a per-request hash stream |
 | 5.3 | Model execution | Discrete event simulation; decisions at request arrival; CP-SAT with one search worker and a fixed seed |
-| 5.4 | System | Linux server, AMD Ryzen 9 7900X, parallel single-threaded processes; class mix and availability gate phases as stated in Section 5 |
+| 5.4 | System | Linux server, AMD Ryzen 9 7900X, parallel single-threaded processes (all phases) |
 | 6.1 | Code access | Code at https://github.com/siwekk/hospital-robot-staff-support; raw outputs at https://doi.org/10.5281/zenodo.24322157 |

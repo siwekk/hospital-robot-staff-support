@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite the accompanying article and the Freiburg dataset."
-title: "Forecasting Human Support Improves the Choice, Not Only the Number, of Hospital Robot Missions: simulation code"
+title: "When Hospital Robots Ask Staff for Help: Forecasting Human Support in Robot Dispatch: simulation code"
 type: software
 authors:
   - family-names: Siwek
@@ -8,7 +8,7 @@ authors:
     affiliation: "Warsaw University of Technology"
     email: krzysztof.siwek@pw.edu.pl
   - family-names: Świetlicka
-    given-names: Aleksandra 
+    given-names: Aleksandra
     affiliation: "Poznań University of Technology"
     email: aleksandra.swietlicka@put.poznan.pl
 version: 1.0.0

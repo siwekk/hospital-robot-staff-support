@@ -1,17 +1,17 @@
-# Forecasting Human Support Improves the Choice, Not Only the Number, of Hospital Robot Missions
+# When Hospital Robots Ask Staff for Help: Forecasting Human Support in Robot Dispatch
 
 **Krzysztof Siwek**<sup>1</sup> and **Aleksandra Świetlicka**<sup>2</sup>
 
 <sup>1</sup> Faculty of Electrical Engineering, Warsaw University of Technology, Warsaw, Poland
 <sup>2</sup> Faculty of Control, Robotics and Electrical Engineering, Poznań University of Technology, Poznań, Poland
 
-Simulation code, experiment designs, calibration logs, and summary results for the article submitted to the *Journal of Intelligent & Robotic Systems*.
+Simulation code, experiment designs, calibration logs, and summary results for the article submitted to the *International Journal of Social Robotics*.
 
 ## Summary
 
-Hospital delivery robots need staff to load, receive, and clean them, so every robot mission also consumes staff time. This study asks whether a dispatcher that forecasts this support makes better robot-versus-human decisions, and why. A discrete event simulation replays 33,079 recorded transport requests of the University Medical Center Freiburg, with robot support given by mobile transporters, stationary local workers, or both.
+Hospital delivery robots need staff to load, receive, and clean them, so every robot mission is also a request for help addressed to the staff it is meant to relieve. This study asks whether a dispatcher that forecasts this support makes better robot-versus-human decisions, why, and what its decisions ask of staff. A discrete event simulation replays 33,079 recorded transport requests of the University Medical Center Freiburg, with robot support given by mobile transporters, stationary local workers, or both.
 
-Compared with a rollout forecast that ignores support, a forecast that represents staff occupation lowers priority-weighted tardiness by 0.163 min per request. Random admission at matched robot coverage attributes this gain to dispatching fewer robots. When the forecast without support is restricted to the same coverage, however, it selects worse than chance and is 0.090 min per request worse than the support-aware forecast: it sends urgent requests to robots while the transporters needed to support them are busy. When robots are used more to release staff time, support-aware rules stay better at equal coverage. A CP-SAT scheduler adds no selection value beyond random admission at its coverage, and human-only transport has the lowest average tardiness. In exploratory scenarios, only unattended receiving and local support narrow or reverse the robots' disadvantage. Representing human support improves the choice of robot missions, but the staff time consumed per mission determines whether robots help.
+Compared with a rollout forecast that ignores support, a forecast that represents staff occupation lowers priority-weighted tardiness by 0.163 min per request. Random admission at matched robot coverage attributes this gain mainly to dispatching fewer robots. When the forecast without support is restricted to the same coverage, however, it selects worse than chance and is 0.090 min per request worse than the support-aware forecast: it sends urgent requests to robots while the transporters needed to support them are busy. This comparison is unchanged when urgent requests make up 20 instead of 40% of demand. Seen from the staff side, a tardiness objective addresses most robot calls to busy people (46% of the missions of the support-aware rule start when no transporter is idle, against 18% under random admission), and released staff time overstates the relief of transporters. An availability gate that admits a robot only when idle workers can serve it halves the calls to staff and lowers tardiness by a further 0.086 min per request, mostly by admitting fewer robots. A CP-SAT scheduler adds no selection value beyond the rollout, and human-only transport has the lowest average tardiness. In exploratory scenarios, only unattended receiving and local support narrow or reverse the robots' disadvantage.
 
 All results are conditional on one hospital pathway network and assumed task classes, service times, and staffing. They do not estimate clinical benefit or staffing needs at Freiburg.
 
@@ -31,6 +31,7 @@ All results are conditional on one hospital pathway network and assumed task cla
 │   ├── extra_simulation.py      Staff time allowance rules (front)
 │   ├── mission_simulation.py    Read-only mission logger
 │   ├── frontvol_simulation.py   Threshold rule (omitted support at matched coverage)
+│   ├── gate_simulation.py       Availability gate (staff rollout admitting only with idle workers at both ends)
 │   ├── run_*.py, pipeline_*.sh  Phase runners (calibrate, verify, freeze, main)
 │   └── analyze_*.py             Analyses that produce the analysis_* folders
 ├── data_preparation/    Download and preprocessing of the public Freiburg data
@@ -89,6 +90,10 @@ Each phase writes one JSON file per run to `results/<phase>/`, skips runs that a
 | Equal budget | Fig. 8, Table A3 | `bash ctl/pipeline_budget.sh` |
 | Demand, night only, tours, combined | Fig. 8, Table A3 | `bash ctl/pipeline_levers.sh 12` |
 | Warm-up check | Section 3.4 | `python ctl/check_warmup.py 8` |
+| Class mix (20% specimens, 5 policies, 10 seeds) | Section 6.7, Table A4 | `python ctl/run_specmix.py --phase all --workers 12` |
+| Availability gate (18 conditions, 20 seeds) | Section 6.8, Table 7 | `python ctl/run_gate.py --phase test` then `--phase main --workers 12` |
+
+The class mix and availability gate phases were added after all other phases. Their raw run outputs are not yet in the Zenodo archive; their designs (`design_specmix.json`, `design_gate.json`), the calibration log (`specmix_calibration.json`), and summary analyses are in this repository.
 
 The main experiment was originally run from a directory layout with a separate `code/` folder; its frozen design is kept as `design_main_original.json` and its outcomes as `main_runs_subset.csv`. A new run of `src/run_workflows.py --phase main` writes a fresh `design_main.json` and reproduces the heuristic policies exactly.
 
@@ -99,6 +104,16 @@ python ctl/analyze_omitvol.py
 python ctl/analyze_frontvol.py
 python figures/make_round2_figures.py . figures/out
 ```
+
+The staff-side measures of Section 6.8 (calls per day, call-to-arrival time, robot waiting time, displaced other duties, overtime, and the workforce state at admission) are computed from the raw runs of all phases, the class mix contrasts from the class mix runs and the stored 40% runs, and the selection value of the gate against the random admission curve from the outputs of the first script:
+
+```bash
+python ctl/analyze_human_side.py <folder with results/main> <folder with results/controls, frontvol, phi_main>
+python ctl/analyze_specmix.py
+python ctl/analyze_gate.py
+```
+
+They write `analysis_human/` and `analysis_specmix/`.
 
 ## Related work by the authors
 

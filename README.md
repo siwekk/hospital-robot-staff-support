@@ -76,7 +76,7 @@ python repro_check_server.py       # reruns stored reference runs; J must be ide
 
 ## Reproducing the experiments
 
-Each phase writes one JSON file per run to `results/<phase>/`, skips runs that already exist, and refuses to mix runs if its frozen design or the simulator source changed. The last argument of a pipeline is the number of parallel processes. Raw run outputs are not included in this repository; all 24,661 run files of all phases are archived at https://doi.org/10.5281/zenodo.24310955 (unpack the archives into the repository root). An earlier record, https://doi.org/10.5281/zenodo.24056430, holds the 21,887 run files of the phases up to the warm-up check only.
+Each phase writes one JSON file per run to `results/<phase>/`, skips runs that already exist, and refuses to mix runs if its frozen design or the simulator source changed. The last argument of a pipeline is the number of parallel processes. Raw run outputs are not included in this repository; all 24,661 run files of all phases are archived at https://doi.org/10.5281/zenodo.24322157 (unpack the archives into the repository root).
 
 | Phase | Article | Command |
 |---|---|---|

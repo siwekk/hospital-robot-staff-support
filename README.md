@@ -76,7 +76,7 @@ python repro_check_server.py       # reruns stored reference runs; J must be ide
 
 ## Reproducing the experiments
 
-Each phase writes one JSON file per run to `results/<phase>/`, skips runs that already exist, and refuses to mix runs if its frozen design or the simulator source changed. The last argument of a pipeline is the number of parallel processes. Raw run outputs are not included in this repository; they are archived at https://doi.org/10.5281/zenodo.24056430 (unpack the archives into the repository root).
+Each phase writes one JSON file per run to `results/<phase>/`, skips runs that already exist, and refuses to mix runs if its frozen design or the simulator source changed. The last argument of a pipeline is the number of parallel processes. Raw run outputs are not included in this repository; all 24,661 run files of all phases are archived at https://doi.org/10.5281/zenodo.24310955 (unpack the archives into the repository root). An earlier record, https://doi.org/10.5281/zenodo.24056430, holds the 21,887 run files of the phases up to the warm-up check only.
 
 | Phase | Article | Command |
 |---|---|---|
@@ -93,7 +93,7 @@ Each phase writes one JSON file per run to `results/<phase>/`, skips runs that a
 | Class mix (20% specimens, 5 policies, 10 seeds) | Section 6.7, Table A4 | `python ctl/run_specmix.py --phase all --workers 12` |
 | Availability gate (18 conditions, 20 seeds) | Section 6.8, Table 7 | `python ctl/run_gate.py --phase test` then `--phase main --workers 12` |
 
-The class mix and availability gate phases were added after all other phases. Their raw run outputs are not yet in the Zenodo archive; their designs (`design_specmix.json`, `design_gate.json`), the calibration log (`specmix_calibration.json`), and summary analyses are in this repository.
+The class mix and availability gate phases were added after all other phases. Their raw run outputs are in archives 11 and 12 of the Zenodo record; their designs (`design_specmix.json`, `design_gate.json`), the calibration log (`specmix_calibration.json`), and summary analyses are also in this repository.
 
 The main experiment was originally run from a directory layout with a separate `code/` folder; its frozen design is kept as `design_main_original.json` and its outcomes as `main_runs_subset.csv`. A new run of `src/run_workflows.py --phase main` writes a fresh `design_main.json` and reproduces the heuristic policies exactly.
 
